@@ -4,7 +4,7 @@ package com.study.strategy;
  * <pre>
  * description : 
  * packageName : com.study.strategy
- * fileName    : IWeapon
+ * fileName    : PaymentPapalStrategy
  * author      : limju
  * date        : 2024 11월 07
  * ======================================================================
@@ -14,6 +14,18 @@ package com.study.strategy;
  *
  * </pre>
  */
-public interface IWeapon {
-    public int doAttact();
+public class PaymentPapalStrategy implements IPaymentStrategy{
+    private String emailId;
+    private String password;
+
+    public PaymentPapalStrategy(String email, String pwd){
+        this.emailId = email;
+        this.password = pwd;
+    }
+
+    @Override
+    public void pay(int amount) {
+        System.out.println(amount + " paid using Paypal.");
+    }
+    
 }
