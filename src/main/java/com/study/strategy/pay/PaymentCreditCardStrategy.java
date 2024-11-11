@@ -1,4 +1,4 @@
-package com.study.strategy;
+package com.study.strategy.pay;
 
 /**
  * <pre>
@@ -14,7 +14,7 @@ package com.study.strategy;
  *
  * </pre>
  */
-public class PaymentCreditCardStrategy implements IPaymentStrategy{
+public class PaymentCreditCardStrategy implements IPaymentStrategy {
     private String name;
     private String cardNumber;
     private String cvv;

@@ -16,10 +16,10 @@ package com.study.strategy;
  */
 public class StrategyMain {
     public static void main(String[] args) {
-        IStrategy strategyA = new StrategyA();
-        strategyA.AbstractAlgorithm();
-        
-        IStrategy strategyB = new StrategyB();
-        strategyB.AbstractAlgorithm();
+        StrategyAlgorithmA algorithm = new StrategyAlgorithmA(new StrategyA());
+        algorithm.algorithm();
+
+        StrategyAlgorithmB strategyB = new StrategyAlgorithmB();
+        strategyB.algorithm( new StrategyB());
     }
 }

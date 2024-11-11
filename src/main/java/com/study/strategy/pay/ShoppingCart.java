@@ -1,4 +1,4 @@
-package com.study.strategy;
+package com.study.strategy.pay;
 
 import java.util.*;
 

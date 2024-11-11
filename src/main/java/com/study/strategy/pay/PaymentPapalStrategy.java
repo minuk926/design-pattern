@@ -1,4 +1,4 @@
-package com.study.strategy;
+package com.study.strategy.pay;
 
 /**
  * <pre>
@@ -14,7 +14,7 @@ package com.study.strategy;
  *
  * </pre>
  */
-public class PaymentPapalStrategy implements IPaymentStrategy{
+public class PaymentPapalStrategy implements IPaymentStrategy {
     private String emailId;
     private String password;
 
