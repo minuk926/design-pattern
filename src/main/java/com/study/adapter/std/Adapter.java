@@ -25,4 +25,9 @@ public class Adapter implements ITarget {
     public void doSomething() {
         adaptee.perform();
     }
+
+    public static void main(String[] args) {
+        ITarget target = new Adapter(new Adaptee());
+        target.doSomething();
+    }
 }

@@ -37,4 +37,19 @@ public class SortEngineClassAdapter extends SortEngineB implements ISortEngine {
     public void printSortListPretty() {
         // A_SortEngine 클래스의 원본 printSortListPretty 메서드의 알고리즘 로직을 그대로 복붙 및 구현
     }
+
+    public static void main(String[] args) {
+        // 클라이언트의 머신에 원본 엔진 대신 어댑터를 할당한다.
+        ISortEngine adaptor = new SortEngineClassAdapter();
+        ClassEngineMachine machine = new ClassEngineMachine();
+        machine.setEngine(adaptor);
+
+        machine.sortingRun();
+
+        ISortEngine adaptor2 = new SortEngineClassAdapter();
+
+        adaptor2.setList();
+        adaptor2.reverseSort();
+        adaptor2.printSortListPretty();
+    }
 }

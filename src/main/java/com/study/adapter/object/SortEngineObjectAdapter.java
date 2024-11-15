@@ -17,10 +17,10 @@ import com.study.adapter.*;
  * </pre>
  */
 public class SortEngineObjectAdapter implements ISortEngine {
-    SortEngineA sortEngineA;
+    SortEngineAdaptee sortEngineA;
     SortEngineB sortEngineB;
     
-    public SortEngineObjectAdapter(SortEngineA sortEngineA, SortEngineB sortEngineB) {
+    public SortEngineObjectAdapter(SortEngineAdaptee sortEngineA, SortEngineB sortEngineB) {
         this.sortEngineA = sortEngineA;
         this.sortEngineB = sortEngineB;
     }
@@ -52,5 +52,25 @@ public class SortEngineObjectAdapter implements ISortEngine {
     @Override
     public void printSortListPretty(){
         sortEngineA.printSortListPretty();
+    }
+
+    public static void main(String[] args) {
+        try {
+            // 클라이언트의 머신에 원본 엔진 대신 어댑터를 할당한다.
+            ISortEngine adaptor = new SortEngineObjectAdapter(new SortEngineAdaptee(), new SortEngineB());
+
+            ObjectEngineMachine machine = new ObjectEngineMachine();
+            machine.setEngine(adaptor);
+
+            machine.sortingRun();
+
+            ISortEngine adaptor2 = new SortEngineObjectAdapter(new SortEngineAdaptee(), new SortEngineB());
+
+            adaptor2.setList();
+            adaptor2.reverseSort();
+            adaptor2.printSortListPretty();
+        }catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

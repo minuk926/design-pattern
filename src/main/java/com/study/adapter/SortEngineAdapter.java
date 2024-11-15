@@ -14,7 +14,7 @@ package com.study.adapter;
  *
  * </pre>
  */
-public class SortEngineMachine {
+public class SortEngineAdapter {
     ISortEngine engine;
 
     void setEngine(ISortEngine engine) { this.engine = engine; }
@@ -30,8 +30,8 @@ public class SortEngineMachine {
     }
 
     public static void main(String[] args) {
-        SortEngineMachine machine = new SortEngineMachine();
-        machine.setEngine(new SortEngineA());
+        SortEngineAdapter machine = new SortEngineAdapter();
+        machine.setEngine(new SortEngineAdaptee());
         machine.sortingRun();
     }
 }

@@ -14,7 +14,7 @@ package com.study.adapter;
  *
  * </pre>
  */
-public class SortEngineA implements ISortEngine {
+public class SortEngineAdaptee implements ISortEngine {
     public void setList() {
         System.out.println("Sort List A");
     }
